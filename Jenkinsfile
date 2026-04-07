@@ -32,7 +32,7 @@ pipeline {
                     // '--rm' удалит контейнер после выполнения команды
                     dockerImage.inside("--rm") {
                         sh 'php -v'
-                        sh 'php -l ./index.php'
+                        sh 'php -l src/index.php'
                     }
                 }
             }
