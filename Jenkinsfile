@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Получаем код из репозитория
-                git branch: 'src', url: 'https://github.com/coffeem614-ctrl/src.git'
+                git branch: 'main', url: 'https://github.com/coffeem614-ctrl/src.git'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
                     // '--rm' удалит контейнер после выполнения команды
                     dockerImage.inside("--rm") {
                         sh 'php -v'
-                        sh 'php -l src/index.php'
+                        sh 'php -l index.php'
                     }
                 }
             }
